@@ -28,7 +28,9 @@ app.use('/', routes);
 // Respond not found to all the wrong routes
 app.use((req, res, next) => {
   res.status(404);
-  res.type('txt').send('Not found');
+  res.render("404", {
+    title: "404 Not Found"
+  });
 });
 // Error Middleware
 app.use((err, req, res, next) => {

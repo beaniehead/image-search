@@ -14,7 +14,72 @@ html(lang="en")
           h1 Image Search
       block content
         div.content
-          p Insert information about how it works
+          div.subHead
+            p This project has two endpoints, an image search and a log of recent user searches
+            h3 Image Search Abstraction API
+            p API endpoint takes two parameters, the search term and a page number of results; 10 results per page, maximum 10 pages
+          p 
+            strong input: 
+          p.code https://imgs.glitch.me/api/imagesearch/chickens?page=1
+          p 
+            strong output: 
+          p.code
+            |[
+            |{
+            br
+            |"link":"http://hobbyfarms.com.s3-us-west-2.amazonaws.com/wp-content/uploads/2017/02/27200444/parasites_thinkstock.jpg",
+            br
+            |"snippet":"3 Parasites That Can Infect Your Chickens - Hobby Farms",
+            br
+            |"context":"http://www.hobbyfarms.com/3-parasites-can-infect-chickens/",
+            br
+            |"thumbnail":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI5BuwXYTgntdD6lH-f8o9x959CWGcakxgS0jexRJIJoDnbtDs1fHYw49U"
+            br
+            |},
+            br
+            |{
+            br
+            |"link":"https://images.meyerhatchery.com/ProductImages/50811.gif?1",
+            br
+            |"snippet":"Chickens For Sale | Meyer Hatchery",
+            br
+            |"context":"https://www.meyerhatchery.com/get_subcat.a5w?cat=1020",
+            br
+            |"thumbnail":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDb69Dt9u1p0LuJ0iM-8tqgQEaSRhNaLeI2m52j789-3ie59EkQWW-umdY"
+            br
+            |},
+            br
+            |...
+            br
+            |]
+          div.subHead2
+            h3 Recent Search Log
+            p Shows the last ten searches
+          p 
+            strong input: 
+          p.code https://imgs.glitch.me/api/latest/imagesearch
+          p 
+            strong output: 
+          p.code 
+            |[{"term":"chickens","when":"2018-01-31T20:51:26+00:00"},
+            br
+            |{"term":"trees","when":"2018-01-31T20:47:15+00:00"},
+            br
+            |{"term":"pasta","when":"2018-01-31T18:49:38+00:00"},
+            br
+            |{"term":"pasta","when":"2018-01-31T18:49:30+00:00"},
+            br
+            |{"term":"pasta","when":"2018-01-31T18:49:22+00:00"},
+            br
+            |{"term":"pasta","when":"2018-01-31T18:49:17+00:00"},
+            br
+            |{"term":"pasta","when":"2018-01-31T18:49:08+00:00"},
+            br
+            |{"term":"paper","when":"2018-01-31T18:41:02+00:00"},
+            br
+            |{"term":"papaer","when":"2018-01-31T18:40:56+00:00"},
+            br
+            |{"term":"tables","when":"2018-01-31T18:40:49+00:00"}]
       block footer
         div.footer
           p Made by Beaniehead
